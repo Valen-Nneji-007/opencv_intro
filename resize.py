@@ -16,7 +16,7 @@ def ImageResize():
         cv.INTER_NEAREST,
         cv.INTER_CUBIC,
         cv.INTER_LANCZOS4
-    ]
+    ] 
 
     interpTitle = ['area','linear','nearest','cubic','lanczos4']
 
@@ -27,9 +27,10 @@ def ImageResize():
     for i in range(len(interMethods)):
         plt.subplot(2,3,i+2)
         imgResize = cv.resize(img,(int(width*scale),int(height*scale)),
-        interploation= interMethods)
+        interpolation= interMethods[i])
         plt.imshow(imgResize)
         plt.title(interpTitle[i])
+    plt.show()
 
 if __name__=='__main__':
     ImageResize()
